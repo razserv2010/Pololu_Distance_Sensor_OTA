@@ -6,4 +6,4 @@
 אם ברצונך לשנות משהו בקוד, תוכל לקמפל ולהעלות לESP דרך http://ip/upload
 
 
-Pololu_Distance_Sensor_2023-Dec-11_02-40-44PM-000_CustomizedView55947269167.png
+![My Image](Pololu_Distance_Sensor_2023-Dec-11_02-40-44PM-000_CustomizedView55947269167.png)
