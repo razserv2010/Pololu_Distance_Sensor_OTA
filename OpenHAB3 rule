@@ -1,0 +1,16 @@
+rule "SensorDistanceBalcony"
+when
+   Item LivingRoomBlinds_State changed to "close" or
+   Item LivingRoomBlinds_RollerControl received command "DOWN"
+   //Item LivingRoomBlinds_RollerPosition changed or
+   
+
+then
+  
+  if (SensorDistanceBalcony.state == 0){
+      Thread::sleep(500)
+      LivingRoomBlinds_RollerControl.sendCommand("STOP")
+   
+  }
+   
+end  
