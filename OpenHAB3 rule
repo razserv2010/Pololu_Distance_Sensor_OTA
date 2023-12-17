@@ -1,4 +1,4 @@
-rule "SensorDistanceBalcony"
+rule "עצירת התריס באופן אוטומטי בזמן לחיצה על הורדת התריס"
 when
    Item LivingRoomBlinds_State changed to "close" or
    Item LivingRoomBlinds_RollerControl received command "DOWN"
@@ -14,3 +14,20 @@ then
   }
    
 end  
+
+rule "עצירת התריס באופן אוטומטי בזמן מעבר מתחת לתריס" 
+//למשל אם ילד עובר מתחת לתריס בזמן שהתריס יורד
+when
+
+   Item LivingRoomBlinds__PowerConsumption changed
+
+then
+   //&& (LivingRoomBlinds__PowerConsumption.state.toString > "1 W")
+    Thread::sleep(1000)
+  if ((LivingRoomBlinds_State.state == "close") && (SensorDistanceBalcony.state == 0)) {
+
+      LivingRoomBlinds_RollerControl.sendCommand("STOP")
+  return;
+  }
+   
+end   
